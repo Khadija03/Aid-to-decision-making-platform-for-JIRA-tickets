@@ -101,7 +101,7 @@ const Header = () => {
           </Col>
         </Row>
         <p className="mt-3 mb-0 text-muted text-sm">
-          <span className="text-nowrap">Total Employees : {" "}</span>
+          <span className="text-nowrap">Total tickets : {" "}</span>
           <span className="text-danger mr-2">
            23 
           </span>
@@ -114,7 +114,7 @@ const Header = () => {
         <Row>
           <div className="col">
             <CardTitle tag="h5" className="text-uppercase text-muted mb-0">
-              Free employees
+              Tickets resolved today
             </CardTitle>
             <span className="h2 font-weight-bold mb-0">4</span>
           </div>
@@ -125,7 +125,7 @@ const Header = () => {
           </Col>
         </Row>
         <p className="mt-3 mb-0 text-muted text-sm">
-          <span className="text-nowrap">Total Employees : {" "}</span>
+          <span className="text-nowrap">Total tickets : {" "}</span>
           <span className="text-danger mr-2">
            23 
           </span>
@@ -138,7 +138,7 @@ const Header = () => {
         <Row>
           <div className="col">
             <CardTitle tag="h5" className="text-uppercase text-muted mb-0">
-              Free employees
+              Tickets not resolved until today
             </CardTitle>
             <span className="h2 font-weight-bold mb-0">4</span>
           </div>
@@ -149,7 +149,7 @@ const Header = () => {
           </Col>
         </Row>
         <p className="mt-3 mb-0 text-muted text-sm">
-          <span className="text-nowrap">Total Employees : {" "}</span>
+          <span className="text-nowrap">Total tikcets : {" "}</span>
           <span className="text-danger mr-2">
            23 
           </span>
