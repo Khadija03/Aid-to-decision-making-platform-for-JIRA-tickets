@@ -885,7 +885,32 @@ def preparation_data(project,jira):
     return hh
 
 
+def ticketsToday(jira,project):
+    test=False
+    size = 100
+    initial = 0
+    open_today=0
+    now=datetime.today()
+    issues = jira.search_issues('project={}'.format(project), 0,1)
+    last_ticket=issues[0].key.split("-")[1]
+    while True:
+        start= initial*size
+        issues = jira.search_issues('project={}'.format(project),  start,size)
+        if len(issues) == 0:
+            break
+        initial += 1
 
+        if(not test):
+            last_ticket=issues[0].key.split("-")[1]
+
+        for issue in issues :
+            a=int(issue.fields.created.split("-")[0])
+            m=int(issue.fields.created.split("-")[1])
+            j=int(issue.fields.created.split("-")[2][:2])
+            if a==now.year and m==now.month and j==now.day:
+                open_today+=1
+
+    return open_today
 
 
 def findDay(date): 

@@ -103,13 +103,16 @@ def getCardData(id_user,jira_domaine,jira_token,email):
 
     if not(result):
         card=get_bugs(request.json.get('projet'),jira)
-
+        opentoday=ticketsToday(jira,request.json.get('projet'))
+        data["Open Today"]=opentoday
         data["bugs"]=card
         visual = Visuals(id_user=id_user, visuals=visuals["visuals"],data=visuals["data"],card_data=data,last_ticket_id=visuals["last_ticket_id"],projet=visuals["projet"])
         visual.save()
         return jsonify({"card_data":visual["card_data"]}), 200
     result=Visuals.objects.get(id_user=id_user,projet=request.json.get('projet'))
     card=get_bugs(request.json.get('projet'),jira)
+    opentoday=ticketsToday(jira,request.json.get('projet'))
+    data["Open Today"]=opentoday
     data["bugs"]=card
     result.update(card_data=data)
     return jsonify({"card_data":result["card_data"]}), 200

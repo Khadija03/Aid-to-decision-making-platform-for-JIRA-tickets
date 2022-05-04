@@ -97,7 +97,7 @@ const Header = () => {
             <CardTitle tag="h5" className="text-uppercase text-muted mb-0">
               Tickets opened today
             </CardTitle>
-            <span className="h2 font-weight-bold mb-0">4</span>
+            <span className="h2 font-weight-bold mb-0">{cards["Open Today"]}</span>
           </div>
           <Col className="col-auto">
             <div className="iconDashboard icon-shape bg-info text-white rounded-circle shadow">
